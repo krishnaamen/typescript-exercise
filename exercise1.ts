@@ -4,7 +4,7 @@
 // 1. BagType
 // - Add an enum named BagType with the values PAPER and CANVAS.
 
-enum bagType{
+enum BagType{
     PAPER,
     CANVAS
 }
@@ -43,7 +43,41 @@ console.log(PresentType, bagType);
     getWeight(): number{
         return this.weight;
     }
-
-
-
  }
+
+// 4.  Bag
+// - Add a class named Bag. Add the attributes: maxWeight (number), bagType (BagType) and an array of Presents (Class that will be added later).
+// - Add a contructor where it is possible to set the first two attributes by sending in parameters in the constructor.
+// - Add a method named addPresent that takes a parameter of the type Present and adds the object to the array of presents.
+
+class Bag{
+    private maxWeight:number;
+    private bagType: BagType;
+    private presents: Present[] = [];
+
+    constructor(maxWeight:number, bagType:BagType, presents:[Present]){
+        this.maxWeight = maxWeight;
+        this.bagType = bagType;
+        this.presents = presents;
+    }
+
+addPresent(present:Present):void{
+    this.presents.push(present);
+
+}
+}
+
+// 5. Santa
+// - Add a class named Santa. Add the attributes String name and int age.
+// - Add a constructor where it is possible to set the attributes by sending in the parameters in the constructor.
+
+class Santa{
+    private name: string;
+    private age: number;
+
+    constructor( name: string, age: number){
+        this.name = name;
+        this.age = age;
+    }
+}
+
